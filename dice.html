@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css"/>
-    <title>Roll Dice</title>
+    <link rel="icon" type="image/png" href="/assets/img/favicons/favicon.ico"/>
+    <title>The Pub - Roll Dice</title>
 </head>
+<body>
+
 <header>
     <a href="/index.html">Home</a>
     <a href="/summaries.html">Session Summaries</a>
@@ -13,7 +16,287 @@
     <a href="/characters.html">Characters</a>
     <a href="/monsters.html">Monsters</a>
 </header>
-<body>
-    <h1>Roll Dice</h1>
+
+<div class="container">
+<h1>Roll Dice</h1>
+<p class="description">All of your dice rolling needs, met on one page. Choose between any of the major seven dice and optionally roll multiple at once.</p>
+<hr>
+
+<div class="dice-container">
+    <div class="dice-card">
+        <div class="dice-header">
+            <h2 class="dice-name">d4</h2>
+            <p class="dice-description">The pyramid die</p>
+        </div>
+        <div class="dice-controls">
+            <div class="quantity-control">
+                <button class="quantity-btn" onclick="changeQuantity('d4', -1)">-</button>
+                <input type="number" class="quantity-display" id="d4-quantity" value="1" min="1" max="20" />
+                <button class="quantity-btn" onclick="changeQuantity('d4', 1)">+</button>
+            </div>
+            <button class="roll-btn" onclick="rollDice('d4')">Roll d4</button>
+        </div>
+        <div class="results" id="d4-results">
+            <div style="color: #E8D1A7; opacity: 0.7; font-style: italic;">Ready to roll...</div>
+        </div>
+    </div>
+
+    <div class="dice-card">
+        <div class="dice-header">
+            <h2 class="dice-name">d6</h2>
+            <p class="dice-description">The classic cube</p>
+        </div>
+        <div class="dice-controls">
+            <div class="quantity-control">
+                <button class="quantity-btn" onclick="changeQuantity('d6', -1)">-</button>
+                <input type="number" class="quantity-display" id="d6-quantity" value="1" min="1" max="20" />
+                <button class="quantity-btn" onclick="changeQuantity('d6', 1)">+</button>
+            </div>
+            <button class="roll-btn" onclick="rollDice('d6')">Roll d6</button>
+        </div>
+        <div class="results" id="d6-results">
+            <div style="color: #E8D1A7; opacity: 0.7; font-style: italic;">Ready to roll...</div>
+        </div>
+    </div>
+
+    <div class="dice-card">
+        <div class="dice-header">
+            <h2 class="dice-name">d8</h2>
+            <p class="dice-description">The octahedron</p>
+        </div>
+        <div class="dice-controls">
+            <div class="quantity-control">
+                <button class="quantity-btn" onclick="changeQuantity('d8', -1)">-</button>
+                <input type="number" class="quantity-display" id="d8-quantity" value="1" min="1" max="20" />
+                <button class="quantity-btn" onclick="changeQuantity('d8', 1)">+</button>
+            </div>
+            <button class="roll-btn" onclick="rollDice('d8')">Roll d8</button>
+        </div>
+        <div class="results" id="d8-results">
+            <div style="color: #E8D1A7; opacity: 0.7; font-style: italic;">Ready to roll...</div>
+        </div>
+    </div>
+
+    <div class="dice-card">
+        <div class="dice-header">
+            <h2 class="dice-name">d10</h2>
+            <p class="dice-description">The pentagonal trapezohedron</p>
+        </div>
+        <div class="dice-controls">
+            <div class="quantity-control">
+                <button class="quantity-btn" onclick="changeQuantity('d10', -1)">-</button>
+                <input type="number" class="quantity-display" id="d10-quantity" value="1" min="1" max="20" />
+                <button class="quantity-btn" onclick="changeQuantity('d10', 1)">+</button>
+            </div>
+            <button class="roll-btn" onclick="rollDice('d10')">Roll d10</button>
+        </div>
+        <div class="results" id="d10-results">
+            <div style="color: #E8D1A7; opacity: 0.7; font-style: italic;">Ready to roll...</div>
+        </div>
+    </div>
+
+    <div class="dice-card">
+        <div class="dice-header">
+            <h2 class="dice-name">d12</h2>
+            <p class="dice-description">The dodecahedron</p>
+        </div>
+        <div class="dice-controls">
+            <div class="quantity-control">
+                <button class="quantity-btn" onclick="changeQuantity('d12', -1)">-</button>
+                <input type="number" class="quantity-display" id="d12-quantity" value="1" min="1" max="20" />
+                <button class="quantity-btn" onclick="changeQuantity('d12', 1)">+</button>
+            </div>
+            <button class="roll-btn" onclick="rollDice('d12')">Roll d12</button>
+        </div>
+        <div class="results" id="d12-results">
+            <div style="color: #E8D1A7; opacity: 0.7; font-style: italic;">Ready to roll...</div>
+        </div>
+    </div>
+
+    <div class="dice-card">
+        <div class="dice-header">
+            <h2 class="dice-name">d20</h2>
+            <p class="dice-description">The icosahedron</p>
+        </div>
+        <div class="dice-controls">
+            <div class="quantity-control">
+                <button class="quantity-btn" onclick="changeQuantity('d20', -1)">-</button>
+                <input type="number" class="quantity-display" id="d20-quantity" value="1" min="1" max="20" />
+                <button class="quantity-btn" onclick="changeQuantity('d20', 1)">+</button>
+            </div>
+            <button class="roll-btn" onclick="rollDice('d20')">Roll d20</button>
+        </div>
+        <div class="results" id="d20-results">
+            <div style="color: #E8D1A7; opacity: 0.7; font-style: italic;">Ready to roll...</div>
+        </div>
+    </div>
+
+    <div class="dice-card">
+        <div class="dice-header">
+            <h2 class="dice-name">d100</h2>
+            <p class="dice-description">The percentile die</p>
+        </div>
+        <div class="dice-controls">
+            <div class="quantity-control">
+                <button class="quantity-btn" onclick="changeQuantity('d100', -1)">-</button>
+                <input type="number" class="quantity-display" id="d100-quantity" value="1" min="1" max="20" />
+                <button class="quantity-btn" onclick="changeQuantity('d100', 1)">+</button>
+            </div>
+            <button class="roll-btn" onclick="rollDice('d100')">Roll d100</button>
+        </div>
+        <div class="results" id="d100-results">
+            <div style="color: #E8D1A7; opacity: 0.7; font-style: italic;">Ready to roll...</div>
+        </div>
+    </div>
+</div>
+
+<div class="roll-history">
+    <h3>Roll History</h3>
+    <div id="history-container">
+        <div style="color: #E8D1A7; opacity: 0.7; font-style: italic; text-align: center; margin-top: 2rem;">No rolls yet. Start rolling some dice!</div>
+    </div>
+</div>
+</div>
+
+<script>
+// Dice quantities
+const diceQuantities = {
+    d4: 1, 
+    d6: 1, 
+    d8: 1, 
+    d10: 1, 
+    d12: 1, 
+    d20: 1, 
+    d100: 1
+};
+
+// Roll history
+let rollHistory = [];
+
+// Change dice quantity
+function changeQuantity(diceType, change) {
+    const input = document.getElementById(diceType + '-quantity');
+    let newQuantity = parseInt(input.value) + change;
+
+    // clamp between 1 and 20
+    newQuantity = Math.max(1, Math.min(20, newQuantity));
+
+    input.value = newQuantity;
+    diceQuantities[diceType] = newQuantity;
+}
+
+// Sync manual input changes
+document.querySelectorAll('.quantity-display').forEach(input => {
+    input.addEventListener('input', (e) => {
+        let value = parseInt(e.target.value);
+
+        if (isNaN(value)) value = 1;
+        value = Math.max(1, Math.min(20, value));
+
+        e.target.value = value;
+
+        const diceType = e.target.id.replace('-quantity', '');
+        diceQuantities[diceType] = value;
+    });
+});
+
+// Roll dice function
+function rollDice(diceType) {
+    const quantity = diceQuantities[diceType];
+    const diceMax = parseInt(diceType.substring(1));
+    
+    // Add rolling animation
+    const resultsDiv = document.getElementById(diceType + '-results');
+    resultsDiv.classList.add('rolling');
+    
+    // Simulate rolling delay for better UX
+    setTimeout(function() {
+        const rolls = [];
+        let total = 0;
+        
+        for (let i = 0; i < quantity; i++) {
+            const roll = Math.floor(Math.random() * diceMax) + 1;
+            rolls.push(roll);
+            total += roll;
+        }
+        
+        // Display results
+        const rollsText = rolls.length > 1 ? 'Individual rolls: ' + rolls.join(', ') : '';
+        const formula = quantity + diceType;
+        
+        resultsDiv.innerHTML = 
+            '<div class="result-total">' + total + '</div>' +
+            '<div class="result-rolls">' + rollsText + '</div>' +
+            '<div class="result-formula">' + formula + '</div>';
+        
+        // Add to history
+        addToHistory(formula, rolls, total);
+        
+        resultsDiv.classList.remove('rolling');
+    }, 500);
+}
+
+// Add roll to history
+function addToHistory(formula, rolls, total) {
+    const timestamp = new Date().toLocaleTimeString();
+    rollHistory.unshift({
+        formula: formula,
+        rolls: rolls.join(', '),
+        total: total,
+        timestamp: timestamp
+    });
+    
+    // Keep only last 20 rolls
+    if (rollHistory.length > 20) {
+        rollHistory = rollHistory.slice(0, 20);
+    }
+    
+    updateHistoryDisplay();
+}
+
+// Update history display
+function updateHistoryDisplay() {
+    const historyContainer = document.getElementById('history-container');
+    
+    if (rollHistory.length === 0) {
+        historyContainer.innerHTML = '<div style="color: #E8D1A7; opacity: 0.7; font-style: italic; text-align: center; margin-top: 2rem;">No rolls yet. Start rolling some dice!</div>';
+        return;
+    }
+    
+    let historyHTML = '';
+    for (let i = 0; i < rollHistory.length; i++) {
+        const roll = rollHistory[i];
+        historyHTML += 
+            '<div class="history-item">' +
+                '<div>' +
+                    '<div class="history-formula">' + roll.formula + '</div>' +
+                    '<div style="color: #E8D1A7; opacity: 0.8; font-size: 0.9rem;">' + roll.rolls + ' (' + roll.timestamp + ')</div>' +
+                '</div>' +
+                '<div class="history-result">' + roll.total + '</div>' +
+            '</div>';
+    }
+    historyContainer.innerHTML = historyHTML;
+}
+
+// Add keyboard shortcuts
+document.addEventListener('keydown', function(event) {
+    if (event.ctrlKey) {
+        switch(event.key) {
+            case '4': rollDice('d4'); break;
+            case '6': rollDice('d6'); break;
+            case '8': rollDice('d8'); break;
+            case '1': 
+                if (event.shiftKey) rollDice('d10');
+                break;
+            case '2':
+                if (event.shiftKey) rollDice('d12');
+                else rollDice('d20');
+                break;
+            case '0': rollDice('d100'); break;
+        }
+    }
+});
+</script>
+
 </body>
 </html>
