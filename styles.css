@@ -1,6 +1,6 @@
 body {
     font-family: 'Georgia', serif;
-    background: #442D1C;
+    background: #2B1D14;
     color: #E8D1A7;
     margin: 0;
     padding: 0;
@@ -36,12 +36,22 @@ header a:hover {
     padding: 2rem;
 }
 
-h1 {
+h1, h2, h3 {
     text-align: center;
     font-size: 3rem;
     margin: 2rem 0;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
-    color: #9D9167;
+    text-shadow: 2px 2px #000;
+    color: #C2A878;
+}
+
+a {
+  color: #C2A878;
+  /* text-decoration: none; */
+  font-weight: bold;
+}
+
+a:hover {
+  color: #8B0000; /* deep crimson on hover */
 }
 
 .description {
@@ -58,6 +68,84 @@ hr {
     margin: 2rem 0;
 }
 
+.site-header {
+    background-color: #222;
+    padding: 1rem 0;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center; /* centers all links horizontally */
+    gap: 2rem; /* spacing between links */
+    flex-wrap: wrap; /* allows wrapping if needed */
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: #E8D1A7;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+    .nav-links {
+        flex-direction: column;     /* stack vertically */
+        align-items: center;        /* center each link */
+        gap: 1rem;                  /* less spacing for mobile */
+    }
+}
+
+.intro-card {
+    background: #3B1F1A; /* mahogany */
+    border: 2px solid #9D9167; /* brass rim */
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    text-align: center;
+}
+
+.intro-card h2 {
+    font-size: 2rem;
+    color: #E8D1A7;
+    margin-bottom: 1rem;
+}
+
+.intro-card p {
+    color: #E8D1A7;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.intro-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; /* spacing between images and text */
+}
+
+.intro-icon {
+    width: 150px; /* adjust size as needed */
+    height: 150px;
+}
+
+.intro-icon.right {
+    transform: scaleX(-1); /* mirror horizontally */
+}
+
 .dice-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -66,8 +154,8 @@ hr {
 }
 
 .dice-card {
-    background: #4C563F;
-    border: 2px solid #743014;
+    background: #3B1F1A;
+    border: 2px solid #9D9167;
     border-radius: 15px;
     padding: 2rem;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
@@ -89,33 +177,31 @@ hr {
     pointer-events: none;
 }
 
-/* .dice-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8);
-    border-color: #9D9167;
-} */
-
-/* .dice-card:hover::before {
-    opacity: 1;
-} */
-
 .dice-header {
     text-align: center;
     margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; /* space between images and title */
+}
+
+.dice-icon {
+    width: 40px;
+    height: 40px;
+}
+
+/* Mirror the right-side image */
+.dice-icon.right {
+    transform: scaleX(-1); /* flips horizontally */
 }
 
 .dice-name {
     font-size: 2rem;
     font-weight: bold;
-    color: #9D9167;
+    color: #E8D1A7;
     margin: 0 0 0.5rem 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-}
-
-.dice-description {
-    color: #E8D1A7;
-    opacity: 0.8;
-    font-style: italic;
 }
 
 .dice-controls {
@@ -134,35 +220,46 @@ hr {
 }
 
 .quantity-btn {
-    background: #743014;
-    color: #E8D1A7;
-    border: none;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+    background: linear-gradient(145deg, #5C2010, #743014); /* mahogany depth */
+    color: #E8D1A7; /* parchment gold */
+    border: 2px solid #9D9167; /* brass rim */
+    width: 34px;
+    height: 34px;
+    border-radius: 50%; /* coin shape */
     cursor: pointer;
     font-weight: bold;
-    transition: all 0.3s ease;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.6),
+                inset 0 -2px 4px rgba(0,0,0,0.4); /* engraved look */
 }
 
 .quantity-btn:hover {
-    background: #5e2710;
-    transform: scale(1.1);
+    background: linear-gradient(145deg, #743014, #9D3B20); /* fire glow on hover */
+    transform: scale(1.15);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.7),
+                inset 0 -3px 6px rgba(0,0,0,0.5);
+}
+
+.quantity-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5) inset;
 }
 
 .quantity-display {
-    background: rgba(36, 53, 51, 0.7);
-    color: #9D9167;
-    border-radius: 25px;
-    border: 2px solid #743014;
+    background: rgba(80, 50, 30, 0.8); /* muted mahogany leather */
+    color: #E8D1A7; /* parchment gold */
+    border-radius: 50px;
+    border: 2px solid #9D9167; /* aged brass rim */
     font-weight: bold;
     min-width: 50px;
     text-align: center;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
+    padding: 0.4rem 1rem;
+    font-size: 1.1rem;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.6); /* sunken effect */
 }
 
 /* Remove spinners in Chrome/Edge */
@@ -178,34 +275,36 @@ hr {
 }
 
 .roll-btn {
-    background: #743014;
-    color: #E8D1A7;
-    border: none;
+    background: linear-gradient(145deg, #5C2010, #743014); /* deep mahogany gradient */
+    color: #E8D1A7; /* parchment text */
+    border: 2px solid #9D9167; /* brass edge */
     padding: 1rem 2rem;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
     font-size: 1.1rem;
     font-weight: bold;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.2s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6),
+                inset 0 -3px 6px rgba(0,0,0,0.4); /* hammered look */
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 .roll-btn:hover {
-    background: #5e2710;
+    background: linear-gradient(145deg, #743014, #9D3B20); /* warm tavern fire glow */
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.7);
 }
 
 .roll-btn:active {
-    transform: translateY(0);
+    transform: translateY(1px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.5);
 }
 
 .results {
     min-height: 120px;
-    background: rgba(36, 53, 51, 0.7);
-    border: 2px solid #743014;
+    background: rgba(80, 50, 30, 0.8);
+    border: 2px solid #9D9167;
     border-radius: 10px;
     padding: 1.5rem;
     margin-top: 1rem;
@@ -216,7 +315,7 @@ hr {
 .result-total {
     font-size: 3rem;
     font-weight: bold;
-    color: #9D9167;
+    color: #E8D1A7;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
     margin-bottom: 0.5rem;
     animation: fadeInScale 0.6s ease;
@@ -237,8 +336,8 @@ hr {
 }
 
 .roll-history {
-    background: rgba(68, 45, 28, 0.6);
-    border: 2px solid #743014;
+    background: #3B1F1A;
+    border: 2px solid #9D9167;
     border-radius: 15px;
     padding: 2rem;
     margin-top: 2rem;
@@ -247,15 +346,15 @@ hr {
 }
 
 .roll-history h3 {
-    color: #9D9167;
+    color: #E8D1A7;
     text-align: center;
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
 
 .history-item {
-    background: rgba(36, 53, 51, 0.5);
-    border: 1px solid #4C563F;
+    background: rgba(80, 50, 30, 0.8);
+    border: 1px solid #9D9167;
     border-radius: 8px;
     padding: 1rem;
     margin-bottom: 1rem;
@@ -279,6 +378,43 @@ hr {
     font-size: 1.2rem;
     font-weight: bold;
     color: #E8D1A7;
+}
+
+.monster-card {
+    background: #3B1F1A; /* mahogany card background */
+    border: 2px solid #9D9167; /* brass rim */
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+.monster-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; /* space between images and title */
+    margin-bottom: 1rem;
+}
+
+.monster-card h2 {
+    font-size: 2rem;
+    color: #E8D1A7;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    margin: 0;
+}
+
+.monster-card h3 {
+    color: #E8D1A7;
+    font-size: 1.2rem;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.monster-card p {
+    color: #E8D1A7;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    opacity: 0.9;
 }
 
 @keyframes fadeInScale {
