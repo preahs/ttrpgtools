@@ -551,11 +551,97 @@ body.summary-bg {
     color: #5b4636;
 }
 
-.summary-page img {
+.centered img {
     display: block;
     margin: 2rem auto; /* auto left/right margins center it */
     max-width: 100%;   /* makes it responsive */
     height: auto;      /* maintain aspect ratio */
+}
+
+/* Centered character card */
+.character-card {
+    background: #3B1F1A; /* mahogany */
+    border: 2px solid #9D9167; /* brass rim */
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem auto;
+    text-align: center;
+    max-width: 600px; /* optional, keeps cards readable */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+.character-card h2 {
+    font-size: 2rem;
+    color: #E8D1A7;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.character-card .char-info {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #E8D1A7;
+    opacity: 0.9;
+}
+
+.character-card figure {
+    margin: 0 auto 1rem;
+}
+
+.character-card img {
+    width: 450px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #9D9167;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.character-card figcaption {
+    font-size: 0.85rem;
+    color: #E8D1A7;
+    opacity: 0.8;
+}
+
+.character-card .description {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #E8D1A7;
+    opacity: 0.9;
+    margin-top: 1rem;
+}
+
+.toc {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.toc h2 {
+    color: #C2A878;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.toc ol {
+    padding-left: 1.5rem; /* leaves space for numbers */
+    display: inline-block;
+    text-align: left;
+}
+
+.toc li {
+    margin: 0.5rem 0;
+}
+
+.toc a {
+    color: #C2A878;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+.toc a:hover {
+    color: #8B0000; /* deep crimson on hover */
 }
 
 /* Mobile responsiveness */
