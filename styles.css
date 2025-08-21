@@ -472,6 +472,107 @@ hr {
     color: #8B0000;
 }
 
+body.summary-bg {
+    background: #fdf6e3; /* soft parchment tone for overall page */
+    color: #5b4636;      /* warm brown text */
+    font-family: 'Georgia', serif;
+    line-height: 1.75;
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.summary-page {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 3rem 2rem;
+    background: #fff8e1;  /* parchment paper for the container */
+    border: 1px solid #e0d4b7; /* subtle edge for "paper" effect */
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+/* Optional faint scroll decoration */
+.summary-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid rgba(180, 140, 90, 0.2);
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+/* Paragraph styling */
+.summary-page p {
+    margin-bottom: 1.6rem;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Drop-cap effect for first letter */
+.summary-page p:first-of-type::first-letter {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #a5693f;
+    float: left;
+    line-height: 1;
+    margin-left: -0.3rem;
+    margin-right: 0.3rem;
+    padding-top: 0.1em;
+}
+
+/* Headings */
+.summary-page h1, .summary-page h2, .summary-page h3 {
+    text-align: center;
+    color: #8b5e3c;           /* darker brown headings */
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.6); /* embossed style */
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Links */
+.summary-page a {
+    color: #b86b3b;           /* deep brown accent */
+    text-decoration: underline dotted;
+    font-weight: bold;
+}
+
+.summary-page a:hover {
+    color: #8c4510;           /* darker brown hover */
+}
+
+/* Text selection */
+.summary-page::selection {
+    background: #ffe7b3;
+    color: #5b4636;
+}
+
+.summary-page img {
+    display: block;
+    margin: 2rem auto; /* auto left/right margins center it */
+    max-width: 100%;   /* makes it responsive */
+    height: auto;      /* maintain aspect ratio */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .summary-page {
+        padding: 2rem 1rem;
+    }
+
+    .summary-page h1 {
+        font-size: 2rem;
+    }
+
+    .summary-page p {
+        font-size: 1rem;
+    }
+}
+
 /* Responsive for smaller screens */
 @media (max-width: 768px) {
     .session-container {
