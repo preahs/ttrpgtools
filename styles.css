@@ -381,41 +381,104 @@ hr {
 }
 
 .monster-card {
-    background: #3B1F1A; /* mahogany card background */
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem; /* space between image and text */
+    background: #3B1F1A; /* mahogany */
     border: 2px solid #9D9167; /* brass rim */
     border-radius: 15px;
-    padding: 2rem;
+    padding: 1.5rem;
     margin: 2rem 0;
     box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    flex-wrap: wrap; /* for mobile responsiveness */
 }
 
-.monster-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem; /* space between images and title */
-    margin-bottom: 1rem;
+.monster-img {
+    width: 200px; /* adjust as needed */
+    height: auto;
+    background: #9D9167;
+    border-radius: 10px;
+    border: 2px solid #9D9167;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    flex-shrink: 0;
 }
 
-.monster-card h2 {
+.monster-info {
+    flex: 1; /* take remaining space */
+}
+
+.monster-info h2 {
     font-size: 2rem;
     color: #E8D1A7;
+    margin: 0 0 0.5rem 0;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-    margin: 0;
 }
 
-.monster-card h3 {
-    color: #E8D1A7;
+.monster-info h3 {
     font-size: 1.2rem;
-    margin: 0.5rem 0 1rem 0;
+    margin: 0 0 1rem 0;
+    color: #E8D1A7;
 }
 
-.monster-card p {
-    color: #E8D1A7;
+.monster-info p {
     font-size: 1rem;
     line-height: 1.5rem;
+    color: #E8D1A7;
+    margin-bottom: 1rem;
     opacity: 0.9;
 }
+
+/* Container grid for session tiles */
+.session-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+/* Individual session tile */
+.session-tile {
+    background: #3B1F1A; /* mahogany */
+    border: 2px solid #9D9167; /* brass rim */
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.6);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.session-tile h2 {
+    font-size: 1.5rem;
+    color: #E8D1A7;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.session-links {
+    font-size: 1rem;
+    color: #C2A878;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.session-links a {
+    color: #C2A878;
+    transition: color 0.2s ease;
+}
+
+.session-links a:hover {
+    color: #8B0000;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    .session-container {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 @keyframes fadeInScale {
     from {
