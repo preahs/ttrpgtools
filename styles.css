@@ -644,6 +644,33 @@ body.summary-bg {
     color: #8B0000; /* deep crimson on hover */
 }
 
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.footer-container img {
+    max-width: 15%;
+    height: auto;
+    flex-shrink: 1;
+}
+
+.main-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.main-page img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
     .summary-page {
