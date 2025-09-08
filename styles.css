@@ -382,7 +382,7 @@ hr {
 
 .monster-card {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 2rem; /* space between image and text */
     background: #3B1F1A; /* mahogany */
     border: 2px solid #9D9167; /* brass rim */
@@ -693,6 +693,21 @@ body.summary-bg {
     }
 }
 
+@media (max-width: 768px) {
+    .monster-card {
+        flex-direction: column;       /* stack image + text vertically */
+        align-items: center;          /* center contents */
+        text-align: center;           /* center text under image */
+    }
+
+    .monster-img {
+        margin-bottom: 1rem;          /* add spacing below image */
+    }
+
+    .monster-info {
+        text-align: center;
+    }
+}
 
 @keyframes fadeInScale {
     from {
