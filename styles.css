@@ -686,6 +686,35 @@ body.summary-bg {
     }
 }
 
+/* Hide hamburger on desktop */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #E8D1A7;
+  cursor: pointer;
+}
+
+/* Mobile menu behavior */
+@media (max-width: 600px) {
+  .hamburger {
+    display: block; /* show button */
+  }
+
+  .nav-links {
+    display: none; /* hide links by default */
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .nav-links.show {
+    display: flex; /* show when toggled */
+  }
+}
+
 /* Responsive for smaller screens */
 @media (max-width: 768px) {
     .session-container {
