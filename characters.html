@@ -11,6 +11,9 @@
 <body>
     <header class="site-header">
     <nav class="nav-bar">
+        <button class="hamburger" aria-label="Toggle menu">
+        ☰
+        </button>
         <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="summaries.html">Session Summaries</a></li>
@@ -240,5 +243,16 @@
         </p>
     </div>
     </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+
+        hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+        });
+    });
+    </script>
 </body>
 </html>
